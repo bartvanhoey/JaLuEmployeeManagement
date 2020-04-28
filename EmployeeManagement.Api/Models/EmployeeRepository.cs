@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Api.Models
@@ -59,13 +60,16 @@ namespace EmployeeManagement.Api.Models
             return null;
         }
 
-        public async void DeleteEmployee(int employeeId)
+        public async Task<Employee> DeleteEmployee(int employeeId)
         {
-            var employee = await _dbContext.Employees
+            var result = await _dbContext.Employees
                 .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
-            if (employee == null) return;
-            _dbContext.Employees.Remove(employee);
+            if (result == null) return null;
+            _dbContext.Employees.Remove(result);
             await _dbContext.SaveChangesAsync();
+            return result;
         }
+
     }
+
 }
