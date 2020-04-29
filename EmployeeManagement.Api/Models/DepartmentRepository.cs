@@ -2,7 +2,7 @@
 using System.Linq;
 using EmployeeManagement.Models;
 
-namespace EmployeeManagement.Api.Models
+namespace EmployeeManagement.API.Models
 {
     public class DepartmentRepository : IDepartmentRepository
     {

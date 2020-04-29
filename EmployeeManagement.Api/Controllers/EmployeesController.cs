@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using EmployeeManagement.Api.Models;
+using EmployeeManagement.API.Models;
 using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EmployeeManagement.Api.Controllers
+namespace EmployeeManagement.API.Controllers
 {
 
     [Route("api/[controller]")]

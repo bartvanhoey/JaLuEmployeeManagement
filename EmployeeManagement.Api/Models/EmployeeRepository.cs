@@ -4,7 +4,7 @@ using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 
-namespace EmployeeManagement.Api.Models
+namespace EmployeeManagement.API.Models
 {
     public class EmployeeRepository : IEmployeeRepository
     {
