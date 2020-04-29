@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EmployeeManagement.Api.Migrations
+namespace EmployeeManagement.API.Migrations
 {
     public partial class Init : Migration
     {

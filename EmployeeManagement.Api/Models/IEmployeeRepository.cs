@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
 
-namespace EmployeeManagement.Api.Models
+namespace EmployeeManagement.API.Models
 {
     public interface IEmployeeRepository
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using EmployeeManagement.Models;
 
-namespace EmployeeManagement.Api.Models
+namespace EmployeeManagement.API.Models
 {
     public interface IDepartmentRepository
     {
