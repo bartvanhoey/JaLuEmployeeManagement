@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
@@ -15,6 +16,25 @@ namespace EmployeeManagement.Api.Models
             _dbContext = dbContext;
         }
 
+
+        public async Task<IEnumerable<Employee>> Search(string name, Gender? gender)
+        {
+            IQueryable<Employee> query = _dbContext.Employees;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+
+                query = query.Where(e => e.FirstName.Contains(name)
+                                         || e.LastName.Contains(name));
+            }
+
+            if (gender != null)
+            {
+                query = query.Where(e => e.Gender == gender);
+            }
+
+            return await query.ToListAsync();
+        }
 
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
