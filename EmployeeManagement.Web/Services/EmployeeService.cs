@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using EmployeeManagement.Models;
@@ -21,6 +19,11 @@ namespace EmployeeManagement.Web.Services
         public async Task<IEnumerable<Employee>> GetEmployees()
         {
             return await _httpClient.GetJsonAsync<Employee[]>("api/employees");
+        }
+
+        public async Task<Employee> GetEmployee(int id)
+        {
+            return await _httpClient.GetJsonAsync<Employee>($"api/employees/{id}");
         }
     }
 }

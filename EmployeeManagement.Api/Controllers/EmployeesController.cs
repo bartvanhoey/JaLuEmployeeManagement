@@ -59,6 +59,7 @@ namespace EmployeeManagement.API.Controllers
 
         }
 
+        //api/employees/{id}
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
@@ -77,6 +78,7 @@ namespace EmployeeManagement.API.Controllers
                     "Error retrieving data from the database");
             }
         }
+
         [HttpPost]
         public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
         {
