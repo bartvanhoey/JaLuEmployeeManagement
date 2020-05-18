@@ -13,14 +13,12 @@ namespace EmployeeManagement.Web.Pages
 
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
-        
-        
-        
         public IEnumerable<Employee> Employees { get; set; }
+        public bool ShowFooter { get; set; } = true;
 
         protected override async Task OnInitializedAsync()
         {
-           Employees = (await EmployeeService.GetEmployees()).ToList();
+            Employees = (await EmployeeService.GetEmployees()).ToList();
         }
 
 
