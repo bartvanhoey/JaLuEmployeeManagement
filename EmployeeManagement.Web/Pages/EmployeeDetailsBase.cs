@@ -2,6 +2,7 @@
 using EmployeeManagement.Models;
 using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace EmployeeManagement.Web.Pages
 {
@@ -15,10 +16,34 @@ namespace EmployeeManagement.Web.Pages
         [Parameter]
         public string Id { get; set; }
 
-        protected  override async Task OnInitializedAsync()
+        public string Coordinates { get; set; }
+        public string ButtonText { get; set; } = "Hide Footer";
+        public string CssClass { get; set; } = null;
+
+        protected override async Task OnInitializedAsync()
         {
             Id ??= "1";
             Employee = await EmployeeService.GetEmployee(int.Parse(Id));
+        }
+
+        // protected void Mouse_Move(MouseEventArgs e){
+        //     Coordinates = $"x = {e.ClientX} - Y = {e.ClientX}";
+        // }
+
+        protected void Button_Click()
+        {
+            if (ButtonText == "Hide Footer")
+            {
+                ButtonText = "Show Footer";
+                CssClass = "hideFooter";
+            }
+            else
+            {
+                {
+                ButtonText = "Hide Footer";
+                CssClass = null;
+            }
+            }
         }
     }
 }
