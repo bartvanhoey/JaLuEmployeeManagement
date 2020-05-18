@@ -7,5 +7,6 @@ namespace EmployeeManagement.Web.Pages
        public string Name { get; set; }  = "Tom";
        public string Gender { get; set; }  = "Male";
        public string Colour { get; set; } = "background-color:white";
+       public string Description { get; set; } = string.Empty;
     }
 }
